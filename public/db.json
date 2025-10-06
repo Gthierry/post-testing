@@ -1,0 +1,22 @@
+{
+    "posts" : [
+        {
+            "id": "1",
+            "title": "Marche ou crève",
+            "content": "Stephen King is a prolific author known for his contributions to the horror genre.",
+            "author": "Stephen King"
+        },
+         {
+            "id": "2",
+            "title": "La peste",
+            "content": "",
+            "author": "Albert Camus"
+        },
+         {
+            "id": "1",
+            "title": "Manon des sources",
+            "content": "Marcel Pagnol was a French novelist, playwright, and filmmaker.",
+            "author": "Marcel Pagnol"
+        }
+    ]
+}

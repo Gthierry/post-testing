@@ -1,0 +1,11 @@
+<h1>Posts List</h1>
+
+@for(post of posts;track post) {
+  <div class="card w-50 mb-3">
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.author }}</p>
+    <div>
+      <button class="" (click)="navigateToDetails(post.id.toString())">View Details</button>
+    </div>
+  </div>
+}
