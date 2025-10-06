@@ -1,13 +1,13 @@
 <h1>Posts List</h1>
 
 @for(post of posts;track post) {
-  <div class="card w-50 m-3 card-body shadow">
-    <h2>{{ post.title }}</h2>
-    <p>{{ post.author }}</p>
-    <div class="">
-      <button class="btn-custom" (click)="navigateToDetails(post.id.toString())">View Details</button>
-      <button class="btn-custom" (click)="navigateToDetails(post.id.toString())">Update</button>
-    </div>
-    
+<div class="card w-50 m-3 card-body shadow">
+  <h2>{{ post.title }}</h2>
+  <p>{{ post.author }}</p>
+  <div class="">
+    <button class="btn-custom" (click)="navigateToDetails(post.id.toString())">View Details</button>
+    <button class="btn-custom" (click)="navigateToUpdate(post.id.toString())">Update</button>
   </div>
+
+</div>
 }

@@ -34,4 +34,7 @@ constructor() {
   navigateToDetails(postId: string) {
     this.router.navigate(['/post-detail', postId]);
 }
+ navigateToUpdate(postId: string) {
+    this.router.navigate(['/post-update', postId]);
+ }
 }

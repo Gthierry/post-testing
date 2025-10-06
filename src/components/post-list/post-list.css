@@ -8,12 +8,12 @@
     font-weight: 500;
     display: inline-flex;
     align-items: center;
-    background: rgba(255, 255, 255, 0.1);
+    background: gray;
     border: 2px solid transparent;
 }
 
 .btn-custom:hover {
-    color: rgba(255, 255, 255, 0.2);;
+    color: gray;
     text-decoration: none;
     background: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
