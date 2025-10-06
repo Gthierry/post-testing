@@ -1,0 +1,54 @@
+/* Styles pour les liens de navigation */
+.btn-custom {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid transparent;
+}
+
+.btn-custom:hover {
+    color: rgba(255, 255, 255, 0.2);;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-custom:focus {
+    color: white;
+    text-decoration: none;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+/* Style pour le lien actif */
+.active-link {
+    background: rgba(255, 255, 255, 0.25) !important;
+    color: white !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    font-weight: 600;
+}
+
+/* Animation pour les icônes */
+.btn-custom i {
+    transition: transform 0.3s ease;
+}
+
+.btn-custom:hover i {
+    transform: scale(1.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .btn-custom {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
