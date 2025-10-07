@@ -3,10 +3,11 @@ import { PostService } from '../../../services/post-service';
 import { ActivatedRoute } from '@angular/router';
 import { Post } from '../../../models/post.model';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { AddUpdatePostFormComponent } from '../../Shared/add-update-post-form-component/add-update-post-form-component';
 
 @Component({
   selector: 'app-post-update',
-  imports: [],
+  imports: [AddUpdatePostFormComponent],
   templateUrl: './post-update.html',
   styleUrl: './post-update.css',
 })
@@ -16,9 +17,6 @@ export class PostUpdate {
 
   idPost: string | undefined;
   post: Post | undefined;
-
-  form: FormGroup;
-  fb: FormBuilder;
 
   getPostbyId() {
     this.idPost = this.route.snapshot.params['id'];
@@ -41,8 +39,6 @@ export class PostUpdate {
           console.log(this.post.title + ' ' + this.post.author);
         },
       });
-
-      this.form = this.fb;
     }
   }
 }
