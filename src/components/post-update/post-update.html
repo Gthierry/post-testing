@@ -1,6 +1,19 @@
-<h1 class="mb-3">Post Details</h1>
-<div class="card w-50 p-3 shadow">
-    <h2 class="card p-2 bg-gradient bg-secondary">{{ post?.title }}</h2>
-    <p class="p-2 mt-2 text-decoration-underline">{{ post?.author }}</p>
-    <p class="p-2 mt-2 card">{{ post?.content }}</p>
+<h1 class="mb-3">Post Update</h1>
+<div class="card">
+
+    <div class="d-flex flex-column m-auto p-2">
+        
+        <label class="form-label mb-3">Title:</label>
+        <input class="form-control" type="text" [textContent]="post?.title" />
+    </div>
+    <div class="m-auto">
+        <label class="form-label mb-3">Author:</label>
+        <input class="form-control" [textContent]="post?.author"/>
+    </div>
+    <div class="m-auto">
+        <label class="form-label mb-3">Content:</label>
+        <input class="form-control" [textContent]=" post?.content" />
+    </div>
+    <button class="btn btn-primary mt-3 mb-3" >Update Post</button>
 </div>
+

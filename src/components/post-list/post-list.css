@@ -8,12 +8,12 @@
     font-weight: 500;
     display: inline-flex;
     align-items: center;
-    background: gray;
+    background: #767E86;
     border: 2px solid transparent;
 }
 
 .btn-custom:hover {
-    color: gray;
+    color: #767E86;
     text-decoration: none;
     background: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
@@ -25,12 +25,12 @@
     color: white;
     text-decoration: none;
     outline: none;
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 0 3px #767E86;
 }
 
 /* Style pour le lien actif */
 .active-link {
-    background: rgba(255, 255, 255, 0.25) !important;
+    background: #767E86 !important;
     color: white !important;
     border-color: rgba(255, 255, 255, 0.4) !important;
     font-weight: 600;

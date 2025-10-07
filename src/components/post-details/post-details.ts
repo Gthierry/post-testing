@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { PostService } from '../../services/post-service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from '../../models/post.model';
 
 @Component({
@@ -12,12 +12,14 @@ import { Post } from '../../models/post.model';
 export class PostDetails {
 
   private readonly postService = inject(PostService);
-  private router = inject(ActivatedRoute);
+  private readonly router = inject(ActivatedRoute);
+  private readonly route = inject(Router);
+  
   postId: string | null = null;
   post:Post | null = null;
 
   getPostId() {
-    this.postId = this.router.snapshot.paramMap.get('id');
+    this.postId = this.router.snapshot.params['id'];
   }
 
   constructor(){
@@ -39,4 +41,20 @@ export class PostDetails {
       }
     });
   }
-}
+
+  deletePost(id:string)
+  {
+    this.postService.deletePost(id).subscribe({
+      next: (response) => {
+        console.log('Post deleted successfully');
+        this.post = null; // Clear the post details after deletion
+      },
+      error: (error) => {
+        console.error('Error deleting post:', error);
+      }
+    });
+    
+      this.route.navigate(['/post-detail', id]);
+    }
+
+  }
