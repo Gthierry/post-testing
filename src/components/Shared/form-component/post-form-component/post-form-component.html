@@ -1,0 +1,18 @@
+<form [formGroup]="form" (click)="send()">
+    <div>
+        <label>id:</label>
+        <input type="text" formControlName="id" />
+    </div>
+    <div>
+        <label>Title:</label>
+        <input type="text" formControlName="title" />
+    </div>
+    <div>
+        <label>Author:</label>
+        <input type="text" formControlName="author" />
+    </div>
+    <div>
+        <label>Content:</label>
+        <textarea type="text" formControlName="content"></textarea>
+    </div>
+</form>

@@ -3,13 +3,14 @@
     color: white;
     text-decoration: none;
     padding: 10px 20px;
-    border-radius: 25px;
+    border-radius: 5px;
     transition: all 0.3s ease;
     font-weight: 500;
     display: inline-flex;
     align-items: center;
     background: #767E86;
     border: 2px solid transparent;
+    margin-left: 15px;
 }
 
 .btn-custom:hover {
@@ -51,4 +52,8 @@
         padding: 8px 16px;
         font-size: 14px;
     }
+}
+.page-title-text-color
+{
+    color: #767E86;
 }

@@ -34,10 +34,9 @@ export class PostService {
   }
 
 //--------------updatePost()----------------
-  updatePost( post: AddPost) 
+  updatePost(id: string, post: AddPost) 
   {
-    return
-
+    return this.httpcClient.put<Post>(`${this.url}/${id}`, post);
   }
 
   //--------------deletePost()----------------

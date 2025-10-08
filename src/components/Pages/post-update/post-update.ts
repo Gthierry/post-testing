@@ -2,12 +2,11 @@ import { Component, inject } from '@angular/core';
 import { PostService } from '../../../services/post-service';
 import { ActivatedRoute } from '@angular/router';
 import { Post } from '../../../models/post.model';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { AddUpdatePostFormComponent } from '../../Shared/add-update-post-form-component/add-update-post-form-component';
-
+import { FormsModule } from '@angular/forms';
+import { PostFormComponent } from '../../Shared/form-component/post-form-component/post-form-component';
 @Component({
   selector: 'app-post-update',
-  imports: [AddUpdatePostFormComponent],
+  imports: [PostFormComponent, FormsModule],
   templateUrl: './post-update.html',
   styleUrl: './post-update.css',
 })
@@ -15,30 +14,35 @@ export class PostUpdate {
   private readonly myService = inject(PostService);
   private readonly route = inject(ActivatedRoute);
 
-  idPost: string | undefined;
-  post: Post | undefined;
+  postId: string | undefined;
+  post: Post | null = null;
 
-  getPostbyId() {
-    this.idPost = this.route.snapshot.params['id'];
+  constructor() {
+    this.getPostbyId();
+    if (this.postId) {
+      this.getPostById(this.postId);
+    }
   }
 
-  getPostFromService(id: string) {
+  getPostbyId() {
+    this.postId = this.route.snapshot.params['id'];
+  }
+
+  getPostById(id: string) {
     this.myService.getPostById(id).subscribe({
-      next: (response) => {
+      next: (response: Post) => {
         this.post = response;
-        console.log(this.post.title);
+        console.log('Post loaded:', this.post.title);
+      },
+      error: (error: any) => {
+        console.error('Error loading post:', error);
       },
     });
   }
-  constructor() {
-    this.getPostbyId();
-    if (this.idPost) {
-      this.myService.getPostById(this.idPost).subscribe({
-        next: (response) => {
-          this.post = response;
-          console.log(this.post.title + ' ' + this.post.author);
-        },
-      });
-    }
-  }
+
+  // postIdReception(id: string) {
+  //   this.postId = id;
+  //   console.log(this.postId);
+  //   debugger;
+  // }
 }
